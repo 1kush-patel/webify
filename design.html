@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+
+    <title>My Spotify</title>
+</head>
+<body>
+    <header>
+        <div class="menu_side">
+            <h1>Playlist</h1>
+            <div class="playlist">
+                <h4 id="playlistTab" class="active"><span></span><i class="bi bi-music-note-beamed"></i>Playlist</h4>
+                <h4 id="recommendedTab"><span></span><i class="bi bi-music-note-beamed"></i>Recommended</h4>
+            </div>
+            <div class="menu_song"></div>
+        </div>
+        <div class="song_side">
+            <nav>
+                <ul>
+                    <li id="discoverTab">Discover <span></span></li>
+                    <li id="libraryTab">MY LIBRARY</li>
+                </ul>
+                <div class="search">
+                    <i class="bi bi-search"></i>
+                    <input type="text" id="searchInput" placeholder="Search Music...">
+                    <button id="searchButton">Search</button>
+                </div>
+                <div class="user" id="userTab">
+                    <img src="" alt="User" title="User Profile Image" id="userImage">
+                    <h4 id="userName"></h4>
+                </div>
+            </nav>
+
+            <div class="playlist_content">
+                <div class="playlist-tracks playlistSongs" id="playlistSongs"></div>
+            </div>
+            
+            <div class="user_item" style="display: none;">
+                <div class="h4">
+                    <h4>Followed Artist</h4>
+                    <div class="btn_s">
+                        <i id="left_scroll" class="bi bi-arrow-left-short"></i>
+                        <i id="right_scroll" class="bi bi-arrow-right-short"></i>
+                    </div>
+                </div>
+                <div class="user_item_list" id="user_item_list"></div>
+            </div>
+
+            <div class="user_item_artist" style="display: none;">
+                <div class="h4">
+                    <h4>User Top Artist</h4>
+                    <div class="btn_s">
+                        <i id="left_scroll" class="bi bi-arrow-left-short"></i>
+                        <i id="right_scroll" class="bi bi-arrow-right-short"></i>
+                    </div>
+                </div>
+                <div class="user_item_list_artist" id="user_item_list_artist"></div>
+            </div>
+            
+            <div class="user_item_track" style="display: none;">
+                <div class="h4">
+                    <h4>User Top Tracks</h4>
+                    <div class="btn_s">
+                        <i id="left_scroll" class="bi bi-arrow-left-short"></i>
+                        <i id="right_scroll" class="bi bi-arrow-right-short"></i>
+                    </div>
+                </div>
+                <div class="user_item_list_track" id="user_item_list_track"></div>
+            </div>
+
+
+            <div class="popular_artist">
+                <div class="h4">
+                    <h4>Popular Artist</h4>
+                    <div class="btn_s">
+                        <i id="left_scroll_pop_artist" class="bi bi-arrow-left-short"></i>
+                        <i id="right_scroll_pop_artist" class="bi bi-arrow-right-short"></i>
+                    </div>
+                </div>
+                <div class="pop_artist" id="popArtistList"></div>
+            </div>
+
+            <div class="popular_song">
+                <div class="h4">
+                    <h4>Popular Song</h4>
+                    <div class="btn_s">
+                        <i id="left_scroll" class="bi bi-arrow-left-short"></i>
+                        <i id="right_scroll_pop_song" class="bi bi-arrow-right-short"></i>
+                    </div>
+                </div>
+                <div id="popsongtitle" class="sectionTitle"></div>
+                <div class="pop_song" id="popSongList"></div>
+                
+            </div>
+            <div id="h3"></div>
+            <div class="popular_albums">
+                <div class="h4">
+                    <h4>Featured Playlists</h4>
+                    <div class="btn_s">
+                        <i id="left_scroll" class="bi bi-arrow-left-short"></i>
+                        <i id="right_scroll" class="bi bi-arrow-right-short"></i>
+                    </div>
+                </div>
+                <div id="popalbumtitle" class="sectionTitle"></div>
+                <div class="pop_album" id="popAlbumList"></div>
+            </div>        
+        </div>
+        <div class="master_play">
+            <div class="icon">
+                <i class="bi bi-skip-start-fill" id="back"></i>
+                <i class="bi bi-play-fill" id="masterPlay"></i>
+                <i class="bi bi-skip-end-fill" id="next"></i>
+            </div>
+            <span id="currentStart">0:00</span>
+            <div class="bar">
+                <input type="range" id="seek" min="0" value="0" max="100">
+                <div class="bar2" id="bar2"></div>
+                <div class="dot" id="dot"></div>
+            </div>
+            <span id="currentEnd">0:00</span>
+            <div class="icon">
+                <i class="bi bi-plus-lg" id="addPlaylistButton"></i>
+            </div>
+        </div>
+        <div id="playlistPopup" class="popup">
+            <div class="popup-content">
+                <h2>Your Saved Playlists</h2>
+            </div>
+        </div>
+        
+    </header>
+    <script src="script.js"></script>
+</body>
+</html>
